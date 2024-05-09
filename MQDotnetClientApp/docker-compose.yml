@@ -1,0 +1,19 @@
+name: 'ibmmq'
+services:
+  mq:
+    image: icr.io/ibm-messaging/mq:latest
+    ports:
+      - 1414:1414
+      - 9443:9443
+    environment:
+      LICENSE: 'accept'
+      KAFKA_ZOOKEEPER_CONNECT: zookeeper:22181
+      MQ_QMGR_NAME: 'QM1'
+      MQ_APP_PASSWORD: 'passw0rd'
+      MQ_ADMIN_PASSWORD: 'passw0rd'
+      MQ_ENABLE_METRICS: 'true'
+    volumes:
+      - /mnt/mqm
+
+
+#docker compose up -d

@@ -1,0 +1,7 @@
+﻿################################################################################
+# This .gitignore file was automatically created by Microsoft(R) Visual Studio.
+################################################################################
+
+/MQDotnetClientApp/.vs
+/MQDotnetClientApp/bin
+/MQDotnetClientApp/obj
