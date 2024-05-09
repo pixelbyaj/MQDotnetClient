@@ -1,8 +1,6 @@
 # IBM MQ Dotnet Client Library
 Dotnet wrapper on top offcial IBMMQDotnetClient library. Built with resilience and transient-fault-handling
 
-## Installation
-
 ## Installation via NuGet
 
 To install the client library via NuGet:
