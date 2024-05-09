@@ -1,6 +1,17 @@
 # IBM MQ Dotnet Client Library
 Dotnet wrapper on top offcial IBMMQDotnetClient library. Built with resilience and transient-fault-handling
 
+## Installation
+
+## Installation via NuGet
+
+To install the client library via NuGet:
+
+* Search for `MQDotnetClient` in the NuGet Library, or
+* Type `Install-Package MQDotnetClient` into the Package Manager Console.
+
+* Type `dotnet add package MQDotnetClient` into the dotnet CLI
+
 ## Dependencies
 *   IBMMQDotnetClient (>= 9.3.5.1)
 *   Microsoft.Extensions.Logging.Abstractions (>= 8.0.1)
@@ -29,8 +40,10 @@ The **queue** that you will be using, **DEV.QUEUE.1**, "lives" on the queue mana
 
 Applications use an **MQ channel** to connect to the queue manager. Access to these three objects is restricted in different ways. For example, user **"app"**, who is a member of the group "mqclient" is permitted to use the channel **DEV.APP.SVRCONN** and user **admin** is permitted to use the channel **DEV.ADMIN.SVRCONN** to connect to the queue manager QM1 and is authorized to put and get messages to and from the queue **DEV.QUEUE.1**.
 
-### IBM QueueManager:
-Configure IBM MQ QueueManager configuration in your appsettings
+## Get Started
+
+### Configure QueueManager:
+Configure IBM MQ QueueManager configuration in your appsettings.json
 *   **SET_MQCONN_PROPERTIES**: If set to false all the MQ configuration will get ignore and only the Environment Variable configuration will get used
 *   **MQSERVER**: Configure MQ connection details
     *   channel_name/protocol/servername(port)
@@ -62,9 +75,11 @@ Configure IBM MQ QueueManager configuration in your appsettings
   * **WaitAndRetrySeconds**: Retry, waiting a specified duration between each retry. The wait is imposed on catching the failure, before making the next try.
   * **CircuitBreakerExceptionAllowedCount**: Exceptions Allowed Before Breaking Circuit
   * **CircutBreakerTimeoutSeconds**:  Waiting a specified duration between each circut breaker duration.
+
+### appsettings.json example
 ```json
-"QueueManagers": {
-          "QM1": {
+"QueueManager": 
+        {
             "SET_MQCONN_PROPERTIES": "true",
             "MQSERVER": "DEV.ADMIN.SVRCONN/TCP/localhost(1414)",
             "MQCNO_RECONNECT": "false",
@@ -89,7 +104,6 @@ Configure IBM MQ QueueManager configuration in your appsettings
               "CircuitBreakerExceptionAllowedCount": 3,
               "CircutBreakerTimeoutSeconds": 5
             }
-          }
         }
 ```
 ### Code Example
