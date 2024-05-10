@@ -106,8 +106,7 @@ namespace MQDotnetClientApp
                     };
             }
             return queueManagerModel;
-        }
-        
+        } 
         private static QueueRetryPolicy GetRetryPolicy(IDictionary<string, string>? retryPolicyDic)
         {
             QueueRetryPolicy retryPolicy;
