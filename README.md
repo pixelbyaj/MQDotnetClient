@@ -1,5 +1,5 @@
 # IBM MQ Dotnet Client Library
-Dotnet wrapper on top official IBMMQDotnetClient library. Built with resilience and transient-fault-handling
+Dotnet wrapper on top of official IBMMQDotnetClient library. Built with resilience and transient-fault-handling
 
 [![NuGet Downloads](https://img.shields.io/nuget/dt/MQDotnetclient)]([www.google.com](https://nuget.org/packages/MQDotnetclient))
 ![GitHub License](https://img.shields.io/github/license/pixelbyaj/mqdotnetclient)
